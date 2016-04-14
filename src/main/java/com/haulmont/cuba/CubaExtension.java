@@ -30,10 +30,8 @@ public class CubaExtension {
         actionManager.registerAction("ReloadFileActionID", reloadFileAction);
         editMenu.add(reloadFileAction);
 
-        DefaultActionGroup mainMenu = (DefaultActionGroup) actionManager.getAction(IdeActions.GROUP_MAIN_MENU);
-        DefaultActionGroup openStudioMenu = new DefaultActionGroup("Open Studio", true, actionManager);
-        mainMenu.add(openStudioMenu, Constraints.LAST);
+        DefaultActionGroup projectMenu = (DefaultActionGroup) actionManager.getAction(IdeActions.GROUP_PROJECT);
+        projectMenu.add(openStudioAction, Constraints.LAST);
         actionManager.registerAction("OpenStudioActionID", openStudioAction);
-        actionManager.registerAction("OpenStudioMenuID", openStudioMenu);
     }
 }
